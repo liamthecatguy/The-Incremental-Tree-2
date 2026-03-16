@@ -3,7 +3,7 @@ let modInfo = {
 	id: "mymod2",
 	author: "liam",
 	pointsName: "points",
-	modFiles: ["prestige.js", "tree.js", 'rows.js'],
+	modFiles: ["prestige.js", "tree.js", 'rows.js', 'goals.js'],
 
 	internationalizationMod: false,
 	// When enabled, it will ask the player to choose a language at the beginning of the game

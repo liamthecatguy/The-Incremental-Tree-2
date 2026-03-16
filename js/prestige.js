@@ -3,7 +3,7 @@
 addLayer("p", {
     name: "prestige", // This is optional, only used in a few places, If absent it just uses the layer id
     symbol: "Prestige", // This appears on the layer's node. Default is the id with the first letter capitalized
-    position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
+    position: 1, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     row: 1, // Row the layer is in on the tree (0 is the first row)
     startData() { return {
         unlocked: true,
@@ -21,7 +21,8 @@ addLayer("p", {
         return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
-        return new Decimal(1)
+        exp = new Decimal(1)
+        return exp
     },
     upgrades: {
         11: {
@@ -34,29 +35,12 @@ addLayer("p", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    microtabs:{
-        tab:{
-            "main":{
-                name(){return 'main'}, // Name of tab button
-                nameI18N(){return 'main'}, // Second name for internationalization (i18n) if internationalizationMod is enabled
-                content:[
-                    ['upgrade', 11],
-                ],
-            },
-            "another":{
-                name(){return 'another'},
-                nameI18N(){return 'another'},
-                content:[
-                ],
-            }
-        },
-    },
+   
     tabFormat: [
        ["display-text", function() { return getPointsDisplay() }],
        "main-display",
        "prestige-button",
        "blank",
-       ["microtabs","tab"]
     ],
     layerShown(){return true},
 })
