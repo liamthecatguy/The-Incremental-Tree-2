@@ -1,18 +1,17 @@
 let modInfo = {
-	name: "The ??? Table",
-	nameI18N: "The ??? Table",// When you enabled the internationalizationMod, this is the name in the second language
+	name: "The Incremental Tree 2",
 	id: "mymod2",
-	author: "nobody",
+	author: "liam",
 	pointsName: "points",
-	modFiles: ["layers.js", "tree.js"],
+	modFiles: ["prestige.js", "tree.js", 'rows.js'],
 
 	internationalizationMod: false,
 	// When enabled, it will ask the player to choose a language at the beginning of the game
 	changedDefaultLanguage: false,
 	// Changes the mod default language. false -> English, true -> Chinese
 
-	initialStartPoints: new Decimal (10), // Used for hard resets and new players
-	offlineLimit: 1,  // In hours
+	initialStartPoints: new Decimal (0), // Used for hard resets and new players
+	offlineLimit: 2,  // In hours
 }
 
 var colors = {
@@ -41,7 +40,7 @@ function hiddenLeftTable(){
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.0",
+	num: "1.00",
 	name: "Literally nothing",
 }
 
